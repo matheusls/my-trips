@@ -1,9 +1,9 @@
-import { FC } from 'react';
+import dynamic from 'next/dynamic';
 
-import { Main } from 'components';
+const Map = dynamic(() => import('components/map/map'), { ssr: false });
 
-const Home: FC = () => {
-  return <Main />;
+const Home = () => {
+  return <Map />;
 };
 
 export default Home;
